@@ -10,6 +10,14 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.localPosition += transform.up * speed * Time.deltaTime;
+        if (lifetime > 0)
+        {
+            lifetime -= Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

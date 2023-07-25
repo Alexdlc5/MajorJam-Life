@@ -13,6 +13,11 @@ public class Enemy_Spawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (game_time <= 0) 
+        {
+            //you win
+            SceneManager.LoadScene(3);
+        }
         timer.value = game_time;
         if (wave_time >= 15)
         {
@@ -22,11 +27,6 @@ public class Enemy_Spawning : MonoBehaviour
                 {
                     Instantiate(defense_cell,transform.position + new Vector3(Random.Range(-boundry,boundry), Random.Range(-boundry, boundry), 0), transform.rotation);
                 }
-            }
-            else
-            {
-                //you win
-                SceneManager.LoadScene(3);
             }
             wave_time = 0;
         }

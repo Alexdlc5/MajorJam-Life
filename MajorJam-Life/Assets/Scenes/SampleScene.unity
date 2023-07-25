@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_core: 1
   explosion: {fileID: 7758599544765856687, guid: 1f206db12a4ca3e42aab697df179738e, type: 3}
-  health: 20
+  health: 5
   target: {fileID: 0}
   projectile: {fileID: 0}
 --- !u!1 &303137373
