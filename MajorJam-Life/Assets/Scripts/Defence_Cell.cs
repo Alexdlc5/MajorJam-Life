@@ -36,8 +36,9 @@ public class Defence_Cell : MonoBehaviour
             {
                 timer -= Time.deltaTime;
             }
-            else
+            else if (timer < 0) 
             {
+                timer = 1;
                 target.GetComponent<Turret>().health -= 1;
             }
         }

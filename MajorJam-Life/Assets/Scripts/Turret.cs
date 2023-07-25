@@ -46,7 +46,7 @@ public class Turret : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" && target == null || Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, target.transform.position))
+        if (!is_core && collision.tag == "Enemy" && (target == null || Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, target.transform.position)))
         {
             target = collision.gameObject;
         }
