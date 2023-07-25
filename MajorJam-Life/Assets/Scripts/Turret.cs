@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Turret : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Turret : MonoBehaviour
             if (health <= 0)
             {
                 //gameover
+                SceneManager.LoadScene(2);
             }
         }
         if (is_core == false && target != null)

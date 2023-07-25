@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Defence_Cell : MonoBehaviour
 {
+    public float bio_value = 10;
     public float speed = 2;
     public float health = 3;
     public float attack_distance = 1;
@@ -17,6 +19,7 @@ public class Defence_Cell : MonoBehaviour
         //if dead
         if (health <= 0)
         {
+            GameObject.FindAnyObjectByType<Cursor>().bio += bio_value;
             Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
         }
@@ -45,7 +48,7 @@ public class Defence_Cell : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Turret") || collision.gameObject.tag.Equals("Core") && target == null || Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, target.transform.position))
+        if (collision.gameObject.tag.Equals("Turret") || collision.gameObject.tag.Equals("Core") && (target == null || Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, target.transform.position)))
         {
             target = collision.gameObject;
         }
