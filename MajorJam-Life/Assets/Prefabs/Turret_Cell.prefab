@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_core: 0
   explosion: {fileID: 7922364584912698270, guid: a35b3e1cc9bc12f43b2c6180ce80e7e3, type: 3}
-  health: 3
+  health: 2
   target: {fileID: 0}
   projectile: {fileID: 7421548634371737620, guid: 562f4225a74644e48915e7bd34bbe907, type: 3}
 --- !u!1 &1073938597630367317
