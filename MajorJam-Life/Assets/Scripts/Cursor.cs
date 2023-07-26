@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Cursor : MonoBehaviour
 {
+    public AudioSource placesound;
     public float bio = 50;
     public TextMeshProUGUI bio_display;
     public bool canPlace = true;
@@ -28,6 +29,7 @@ public class Cursor : MonoBehaviour
         if (interfering_towers.Count == 0 && bio >= 50)
         {
             bio -= 50;
+            placesound.Play();
             Instantiate(Selected_Cell, transform.position, transform.rotation);
         }
     }

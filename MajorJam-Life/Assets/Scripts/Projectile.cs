@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float lifetime = 10;
     public float speed = 10;
     public ParticleSystem explosion;
+    public GameObject hit;
     void Update()
     {
         transform.localPosition += transform.up * speed * Time.deltaTime;
@@ -24,6 +25,13 @@ public class Projectile : MonoBehaviour
         if (collision.tag.Equals("Enemy"))
         {
             collision.GetComponent<Defence_Cell>().health -= 1;
+            Instantiate(hit);
+            Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject);
+        }
+        else if (collision.tag.Equals("Cell") && collision.GetComponentInParent<Turret>())
+        {
+            Instantiate(hit);
             Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
         }

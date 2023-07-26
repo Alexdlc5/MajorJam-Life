@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
     public float health = 10;
     public GameObject target = null;
     public GameObject projectile;
+    public AudioSource shoot_sound;
     private float timer = .5f;
     // Update is called once per frame
     void Update()
@@ -41,7 +42,8 @@ public class Turret : MonoBehaviour
             }
             else
             {
-                Instantiate(projectile, transform.position, transform.rotation);
+                shoot_sound.Play();
+                Instantiate(projectile, transform.position + (2 * transform.up), transform.rotation);
                 timer = .5f;
             }
         }
