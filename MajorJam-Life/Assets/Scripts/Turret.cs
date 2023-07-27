@@ -6,12 +6,22 @@ using UnityEngine.SceneManagement;
 public class Turret : MonoBehaviour
 {
     public bool is_core = false;
+    public bool is_factory = false;
+    public float BPS_factory = 1;
     public ParticleSystem explosion;
     public float health = 10;
     public GameObject target = null;
     public GameObject projectile;
     public AudioSource shoot_sound;
     private float timer = .5f;
+    private Cursor cursor;
+    private void Start()
+    {
+        if (is_factory)
+        {
+            cursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<Cursor>();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +41,7 @@ public class Turret : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (is_core == false && target != null)
+        if (is_factory == false && is_core == false && target != null)
         {
             //look at
             Vector3 diff = target.transform.position - transform.position;
@@ -50,6 +60,10 @@ public class Turret : MonoBehaviour
                 Instantiate(projectile, transform.position + (2 * transform.up), transform.rotation);
                 timer = .5f;
             }
+        }
+        if (is_factory)
+        {
+            cursor.bio += Time.deltaTime * BPS_factory;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

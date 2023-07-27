@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_nuetrophil: 0
-  bio_value: 15
+  bio_value: 10
   speed: 3
   health: 7
   attack_distance: 2

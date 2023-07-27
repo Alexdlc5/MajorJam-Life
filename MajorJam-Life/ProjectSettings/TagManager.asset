@@ -9,6 +9,7 @@ TagManager:
   - Turret
   - Cell
   - Explosion
+  - Cursor
   layers:
   - Default
   - TransparentFX
