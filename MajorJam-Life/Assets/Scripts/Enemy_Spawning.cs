@@ -10,6 +10,7 @@ public class Enemy_Spawning : MonoBehaviour
     public float wave_time = 15;
     public float boundry = 100;
     public GameObject defense_cell;
+    public GameObject nuetrophil;
     // Update is called once per frame
     void Update()
     {
@@ -23,8 +24,13 @@ public class Enemy_Spawning : MonoBehaviour
         {
             if (game_time > 0)
             {
-                for (int i = 0; i < Mathf.Pow(2,(300 - game_time)/60); i++)
+                for (int i = 0; i < (Mathf.Pow(2,(300 - game_time)/60) * 1.75f); i++)
                 {
+                    int randomnum = Random.Range(1,100);
+                    if (randomnum < 25)
+                    {
+                        Instantiate(nuetrophil, transform.position + new Vector3(Random.Range(-boundry, boundry), Random.Range(-boundry, boundry), 0), transform.rotation);
+                    }
                     Instantiate(defense_cell,transform.position + new Vector3(Random.Range(-boundry,boundry), Random.Range(-boundry, boundry), 0), transform.rotation);
                 }
             }

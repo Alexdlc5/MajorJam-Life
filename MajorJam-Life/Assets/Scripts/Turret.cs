@@ -23,13 +23,16 @@ public class Turret : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
-        if (is_core == false && target != null)
+        else
         {
             if (health <= 0)
             {
-                Instantiate(explosion,transform.position,transform.rotation).GetComponent<ParticleSystem>().Play();
+                Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
                 Destroy(gameObject);
             }
+        }
+        if (is_core == false && target != null)
+        {
             //look at
             Vector3 diff = target.transform.position - transform.position;
             diff.Normalize();
@@ -54,6 +57,13 @@ public class Turret : MonoBehaviour
         if (!is_core && collision.tag == "Enemy" && (target == null || Vector2.Distance(transform.position, collision.gameObject.transform.position) < Vector2.Distance(transform.position, target.transform.position)))
         {
             target = collision.gameObject;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Explosion")
+        {
+            health -= 3;
         }
     }
 }
