@@ -284,6 +284,7 @@ MonoBehaviour:
   health: 5
   target: {fileID: 0}
   projectile: {fileID: 0}
+  shoot_sound: {fileID: 0}
 --- !u!1 &303137373
 GameObject:
   m_ObjectHideFlags: 0

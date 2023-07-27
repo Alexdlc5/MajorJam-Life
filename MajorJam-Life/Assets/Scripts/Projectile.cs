@@ -25,7 +25,9 @@ public class Projectile : MonoBehaviour
         if (collision.tag.Equals("Enemy"))
         {
             collision.GetComponent<Defence_Cell>().health -= 1;
-            Instantiate(hit);
+            AudioSource sound = Instantiate(hit).GetComponent<AudioSource>();
+            sound.pitch = Random.Range(.7f, 1.2f);
+            sound.Play();
             Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
         }

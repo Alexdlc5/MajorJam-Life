@@ -42,6 +42,7 @@ public class Turret : MonoBehaviour
             }
             else
             {
+                shoot_sound.pitch = Random.Range(.7f, 1.2f);
                 shoot_sound.Play();
                 Instantiate(projectile, transform.position + (2 * transform.up), transform.rotation);
                 timer = .5f;
