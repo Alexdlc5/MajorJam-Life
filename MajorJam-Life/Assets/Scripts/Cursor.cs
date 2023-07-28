@@ -16,11 +16,14 @@ public class Cursor : MonoBehaviour
     public GameObject turret;
     public float turret_price = 50;
     public float factory_price = 50;
+    public float mine_price = 50;
     public GameObject factory;
     public GameObject Selected_Cell;
     public Button place;
     public Button select_turret;
     public Button select_factory;
+    public Button select_mine;
+    public GameObject mine;
 
     private HashSet<GameObject> interfering_towers = new HashSet<GameObject>();
     private void Start()
@@ -28,6 +31,7 @@ public class Cursor : MonoBehaviour
         place.onClick.AddListener(Place);
         select_turret.onClick.AddListener(selectTurret);
         select_factory.onClick.AddListener(selectFactory);
+        select_mine.onClick.AddListener(selectMine);
         Selected_Cell = turret;
         price_display.text = "Bio Cost: " + turret_price;
         cell_name_display.text = "Turret Cell";
@@ -43,19 +47,33 @@ public class Cursor : MonoBehaviour
         {
             if (Selected_Cell == turret && bio >= turret_price)
             {
-
                 bio -= turret_price;
-                placesound.Play();
-                Instantiate(Selected_Cell, transform.position, transform.rotation);
+                placeSelectedCell();
             }
             else if (Selected_Cell == factory && bio >= factory_price)
             {
                 bio -= factory_price;
-                placesound.Play();
-                Instantiate(Selected_Cell, transform.position, transform.rotation);
+                placeSelectedCell();
             }
-           
+            else if (Selected_Cell == mine && bio >= mine_price)
+            {
+                bio -= mine_price;
+                placeSelectedCell();
+            }
         }
+    }
+    void placeSelectedCell()
+    {
+        placesound.Play();
+        Instantiate(Selected_Cell, transform.position, transform.rotation);
+    }
+    void selectMine()
+    {
+        Selected_Cell = mine;
+        price_display.text = "Bio Cost: " + mine_price;
+        cell_name_display.text = "Mine Cell";
+        cannon_display.color = new Color(cannon_display.color.r, cannon_display.color.g, cannon_display.color.b, 0);
+        selected_cell_display.sprite = Selected_Cell.GetComponent<SpriteRenderer>().sprite;
     }
     void selectFactory()
     {

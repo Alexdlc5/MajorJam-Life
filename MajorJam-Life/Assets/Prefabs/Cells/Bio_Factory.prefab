@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8238553062431168339}
   - component: {fileID: 4381684919677318782}
   - component: {fileID: 8255805938491977790}
+  - component: {fileID: 4220395086803687237}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Cell
@@ -95,6 +96,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &4220395086803687237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599818897602591314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329534f01335d8340807b88ca8481ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2454123156363779617
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +142,7 @@ Transform:
   m_Children:
   - {fileID: 8238553062431168339}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5691236970228681277
 SpriteRenderer:
@@ -236,9 +249,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20351076, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 16.508852
+  m_Radius: 30
 --- !u!114 &4673776653516485997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_core: 0
   is_factory: 1
-  BPS_factory: 2.5
+  BPS_factory: 1.25
   explosion: {fileID: 258948564302182932, guid: 8c2ec81f6a945aa4d951a93522f337e5, type: 3}
-  health: 10
+  health: 4
   target: {fileID: 0}
   projectile: {fileID: 0}
   shoot_sound: {fileID: 0}

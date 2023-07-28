@@ -145,7 +145,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.07935524, y: 0.0000019073486}
   serializedVersion: 2
-  m_Radius: 17.52701
+  m_Radius: 35
 --- !u!114 &3205475802455468070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +159,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_core: 0
+  is_factory: 0
+  BPS_factory: 1
   explosion: {fileID: 7922364584912698270, guid: a35b3e1cc9bc12f43b2c6180ce80e7e3, type: 3}
-  health: 2
+  health: 3
   target: {fileID: 0}
   projectile: {fileID: 7421548634371737620, guid: 562f4225a74644e48915e7bd34bbe907, type: 3}
   shoot_sound: {fileID: 7972325341773285576}
@@ -175,6 +177,7 @@ GameObject:
   - component: {fileID: 5937461526466921466}
   - component: {fileID: 8291626042243175538}
   - component: {fileID: 5150333931478079618}
+  - component: {fileID: 577173543771914887}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Cell
@@ -259,6 +262,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &577173543771914887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073938597630367317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329534f01335d8340807b88ca8481ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7469570343439953975
 GameObject:
   m_ObjectHideFlags: 0

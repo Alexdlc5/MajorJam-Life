@@ -73,11 +73,5 @@ public class Turret : MonoBehaviour
             target = collision.gameObject;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Explosion")
-        {
-            health -= 3;
-        }
-    }
+
 }
