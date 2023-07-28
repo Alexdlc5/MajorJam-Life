@@ -21,7 +21,12 @@ public class Defence_Cell : MonoBehaviour
         //if dead
         if (health <= 0)
         {
-            GameObject.FindAnyObjectByType<Cursor>().bio += bio_value;
+            Cursor cursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<Cursor>();
+            if (cursor.interfering_towers.Contains(gameObject))
+            {
+                cursor.interfering_towers.Remove(gameObject);
+            }
+            cursor.bio += bio_value;
             Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
         }

@@ -25,7 +25,7 @@ public class Cursor : MonoBehaviour
     public Button select_mine;
     public GameObject mine;
 
-    private HashSet<GameObject> interfering_towers = new HashSet<GameObject>();
+    public HashSet<GameObject> interfering_towers = new HashSet<GameObject>();
     private void Start()
     {
         place.onClick.AddListener(Place);

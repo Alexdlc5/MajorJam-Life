@@ -2708,7 +2708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7490196, g: 0.8862745, b: 0.23921569, a: 1}
+  m_Color: {r: 0.7750048, g: 0.9150943, b: 0.25467247, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placesound: {fileID: 627558920}
-  bio: 100
+  bio: 125
   bio_display: {fileID: 1066647424}
   price_display: {fileID: 1162417834}
   cell_name_display: {fileID: 137790519}
