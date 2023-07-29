@@ -13,6 +13,6 @@ public class Color_Change_Slider : MonoBehaviour
     }
     void Update()
     {
-        slider_fill.GetComponent<Image>().color = new Color(1 - slider.value / slider.maxValue, slider.value / slider.maxValue, slider_fill.GetComponent<Image>().color.b, slider_fill.GetComponent<Image>().color.a);
+        slider_fill.GetComponent<Image>().color = new Color(1 - slider.value / slider.maxValue, slider.value / slider.maxValue, slider_fill.GetComponent<Image>().color.b, .5f);
     }
 }

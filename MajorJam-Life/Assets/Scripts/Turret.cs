@@ -37,6 +37,11 @@ public class Turret : MonoBehaviour
         {
             if (health <= 0)
             {
+                Cursor cursor = GameObject.FindGameObjectWithTag("Cursor").GetComponent<Cursor>();
+                if (cursor.interfering_towers.Contains(gameObject))
+                {
+                    cursor.interfering_towers.Remove(gameObject);
+                }
                 Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
                 Destroy(gameObject);
             }
